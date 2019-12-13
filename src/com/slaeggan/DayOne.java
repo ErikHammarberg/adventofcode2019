@@ -8,7 +8,19 @@ public class DayOne {
     public int calculateTotalFuel() {
         return INPUT1.lines().mapToInt(Integer::parseInt)
                 .map(this::calculateFuelModule).sum();
+    }
 
+    public int calculateTotalFuel2() {
+        return INPUT1.lines().mapToInt(Integer::parseInt)
+                .map(moduleMass -> {
+                    int mass = moduleMass;
+                    int totalFuel = 0;
+                    while(mass > 0) {
+                        mass = calculateFuelModule(mass);
+                        totalFuel +=Math.max(mass, 0);
+                    }
+                    return totalFuel;
+                }).sum();
     }
 
     private int calculateFuelModule(int moduleMass) {
