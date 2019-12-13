@@ -4,7 +4,7 @@ public class Main {
 
     public static void main(String[] args) {
 
-        var dayOne = new DayOne();
-        System.out.println(dayOne.calculateTotalFuel2());
+        var dayTwo = new DayTwo();
+        System.out.println(dayTwo.doWork1());
     }
 }
